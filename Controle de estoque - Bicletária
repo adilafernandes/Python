@@ -1,0 +1,183 @@
+# Inicio da Variáveis Globais
+lista_peca = []  # lista de peças cadastradas
+codigo = 0
+# Fim das Variáveis Globais
+
+# Incialização da função de cadastrar produtos
+def cadastrarPeca(codigo): # a função recebe o indicador código
+    print('Você selecionou a opção de Cadastrar Peça')
+    print('Código do Peça: {}'.format(codigo))
+    nome = input('Por favor entre o NOME da peça:')
+    fabricante = input('Por favor entre o FABRICANTE da peça:')
+    valor = float(input('Por favor entre o VALOR(R$) da peça:'))
+
+    #criar um dicionário contendo as informações das peças que serão cadastradas
+    dicionario_peca = {'codigo': codigo,
+                       'nome': nome,
+                       'fabricante': fabricante,
+                       'valor': valor}
+    lista_peca.append(dicionario_peca.copy()) # adiciona o dicionário à lista de peças
+
+    print('Peça cadastrada com sucesso!')
+
+
+# Inicialização da função de consultar peças
+def consultarPeca():
+    while True: #inicia o laço até uma opção seja válida
+        opcao_consultar = input('Escolha a opção desejada: \n' +
+                                '1-Consultar Todas as Peças \n' +
+                                '2-Consultar Peças por Código \n' +
+                                '3-Consultar Peças por Fabricante \n' +
+                                '4-Retonar \n' +
+                                '>>')
+
+        if opcao_consultar == '1':  # consultar por todas as peças cadastrada
+            print('Você escolheceu a opção consultar todas as peças')
+            for peca in lista_peca:  # pecorrer cada peça na lista de peças
+                print("---------------------------")
+                for key, value in peca.items(): #percorre cada chave-valor na lista e imprime cada um
+                    print('{}: {}'.format(key, value))
+                print("---------------------------")
+
+        elif opcao_consultar == '2':  # consultar por código
+            print('Você escolheceu a opção consultar por Código')
+            codigo = int(input('Digite o código da peça: '))
+            for peca in lista_peca: #percorre cada peça na lista de peças
+                if peca['codigo'] == codigo:
+                    print("---------------------------")
+                    for key, value in peca.items(): ##percorre cada chave-valor na lista e imprime a peça correspondente ao código solicitado
+                        print('{}: {}'.format(key, value))
+                    print("---------------------------")
+                    break # encerra o laço
+            else:
+                print("Peça não encontrada.\n") # se usuário digitar um número de código invalido volta pro começa do laço
+
+        elif opcao_consultar == '3':  # consultar por fabricante
+            print('Você escolheceu a opção consultar por Fabricante')
+            fabricante_desejado = input('Digite o fabricante da peça: ')
+            for peca in lista_peca:
+                if peca['fabricante'] == fabricante_desejado:
+                    print("---------------------------")
+                    for key, value in peca.items():
+                        print('{}: {}'.format(key, value))
+                    print("---------------------------")
+                else:
+                    print('Peças do fabricante não encontradas.') # se usuário digitar um fabricante invalido volta pro começa do laço
+        elif opcao_consultar == '4':
+            return  # retorna para o começo do laço
+
+        else:
+            print("Opção inválida. Tente novamente.\n")
+# Inicio da Variáveis Globais
+lista_peca = []  # lista de peças cadastradas
+codigo = 0
+# Fim das Variáveis Globais
+
+# Incialização da função de cadastrar produtos
+def cadastrarPeca(codigo): # a função recebe o indicador código
+    print('Você selecionou a opção de Cadastrar Peça')
+    print('Código do Peça: {}'.format(codigo))
+    nome = input('Por favor entre o NOME da peça:')
+    fabricante = input('Por favor entre o FABRICANTE da peça:')
+    valor = float(input('Por favor entre o VALOR(R$) da peça:'))
+
+    #criar um dicionário contendo as informações das peças que serão cadastradas
+    dicionario_peca = {'codigo': codigo,
+                       'nome': nome,
+                       'fabricante': fabricante,
+                       'valor': valor}
+    lista_peca.append(dicionario_peca.copy()) # adiciona o dicionário à lista de peças
+
+    print('Peça cadastrada com sucesso!')
+
+
+# Inicialização da função de consultar peças
+def consultarPeca():
+    while True: #inicia o laço até uma opção seja válida
+        opcao_consultar = input('Escolha a opção desejada: \n' +
+                                '1-Consultar Todas as Peças \n' +
+                                '2-Consultar Peças por Código \n' +
+                                '3-Consultar Peças por Fabricante \n' +
+                                '4-Retonar \n' +
+                                '>>')
+
+        if opcao_consultar == '1':  # consultar por todas as peças cadastrada
+            print('Você escolheceu a opção consultar todas as peças')
+            for peca in lista_peca:  # pecorrer cada peça na lista de peças
+                print("---------------------------")
+                for key, value in peca.items(): #percorre cada chave-valor na lista e imprime cada um
+                    print('{}: {}'.format(key, value))
+                print("---------------------------")
+
+        elif opcao_consultar == '2':  # consultar por código
+            print('Você escolheceu a opção consultar por Código')
+            codigo = int(input('Digite o código da peça: '))
+            for peca in lista_peca: #percorre cada peça na lista de peças
+                if peca['codigo'] == codigo:
+                    print("---------------------------")
+                    for key, value in peca.items(): ##percorre cada chave-valor na lista e imprime a peça correspondente ao código solicitado
+                        print('{}: {}'.format(key, value))
+                    print("---------------------------")
+                    break # encerra o laço
+            else:
+                print("Peça não encontrada.\n") # se usuário digitar um número de código invalido volta pro começa do laço
+
+        elif opcao_consultar == '3':  # consultar por fabricante
+            print('Você escolheceu a opção consultar por Fabricante')
+            fabricante_desejado = input('Digite o fabricante da peça: ')
+            for peca in lista_peca:
+                if peca['fabricante'] == fabricante_desejado:
+                    print("---------------------------")
+                    for key, value in peca.items():
+                        print('{}: {}'.format(key, value))
+                    print("---------------------------")
+                else:
+                    print('Peças do fabricante não encontradas.') # se usuário digitar um fabricante invalido volta pro começa do laço
+        elif opcao_consultar == '4':
+            return  # retorna para o começo do laço
+
+        else:
+            print("Opção inválida. Tente novamente.\n")
+
+
+
+# Inicialização da função de remover peças
+def removerPeca():
+    valor_desejado = int(input("Digite o código da peça que deseja remover: "))
+    for peca in lista_peca:
+        if peca['codigo'] == valor_desejado:
+            lista_peca.remove(peca) # remove da lista das peças a peça desejada
+            print("Peça removida com sucesso!\n")
+            break
+    else:
+        print("Peça não encontrada.\n")
+
+
+# Inicio Main
+print('Bem vindo ao controle de Estoque da Bicicletaria da Ádila Fernandes')
+while True:
+    opcao = input('Escolha a opção desejada: \n' + #menu de opções
+                  '1-Cadastrar Peças \n' +
+                  '2-Consultar Peças \n' +
+                  '3-Remover Peças \n' +
+                  '4-Sair\n' +
+                  '>>')
+
+    if opcao == '1':
+        codigo = codigo + 1
+        cadastrarPeca(codigo)
+    elif opcao == '2':
+        consultarPeca()
+    elif opcao == '3':
+        removerPeca()
+    elif opcao == '4':
+        break  # encerra o laço e fecha o programa
+    else:
+        print('Opção Inválida. Tente Novamente') #volta pro início do laço
+
+       
+
+
+
+
+
