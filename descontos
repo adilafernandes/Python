@@ -1,0 +1,29 @@
+print('Bem vindo a loja da Ádila Fernandes')
+
+# Solicitar ao usuário o valor e a quantidade do produto
+valor_produto = float(input('Entre com o valor do produto: '))
+quantidade = int(input('Entre com a quantidade do produto: '))
+
+# Inicialização da variável desconto
+desconto = 0
+
+# Aplicar o desconto por unidade:
+if quantidade <= 9:
+    desconto = 0.00
+elif 10 <= quantidade <= 99:
+    desconto = 0.05
+elif 100 <= quantidade < 999:
+    desconto = 0.10
+else:
+    desconto = 0.15
+
+# Calcular o valor total sem desconto
+valor_sem_desconto = valor_produto * quantidade
+# Calcular o valor total com desconto
+valor_com_desconto = valor_sem_desconto - valor_sem_desconto * desconto
+# Imprimir o valor total sem desconto e com desconto.
+print('Valor total SEM desconto é de : R$ {:.2f}'.format(valor_sem_desconto))
+print('Valor total COM desconto é de : R$ {:.2f}'.format(valor_com_desconto)) 
+  
+
+
